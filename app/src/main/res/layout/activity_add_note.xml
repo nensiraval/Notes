@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#141414"
+    android:background="#313030"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddNote">
@@ -26,7 +26,7 @@
         android:layout_marginTop="30dp"
         android:text="Add Note"
         android:gravity="center"
-        android:fontFamily="casual"
+        android:fontFamily="@font/regulr"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="30dp"/>

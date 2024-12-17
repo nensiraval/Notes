@@ -9,8 +9,7 @@
     android:layout_marginEnd="10dp"
     android:background="@drawable/round"
     android:backgroundTint="#fd9a9d"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="4dp">
+    app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="350dp"
@@ -24,9 +23,10 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:text="Delete This Contact"
+            android:text="Want to delete?"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:fontFamily="@font/italic"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

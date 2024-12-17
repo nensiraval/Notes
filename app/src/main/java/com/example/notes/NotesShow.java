@@ -8,20 +8,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class NotesShow extends AppCompatActivity {
 
@@ -29,6 +23,7 @@ public class NotesShow extends AppCompatActivity {
     RecyclerView list; SearchView search ;
     ArrayList<Modelclass> arrayList = new ArrayList<>();
 
+    int image[] = {R.drawable.first,R.drawable.f1,R.drawable.f2,R.drawable.f3,R.drawable.f4,R.drawable.f5};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +36,12 @@ public class NotesShow extends AppCompatActivity {
         int texthintColor = Color.BLACK;
         int textColor = Color.BLACK;
 
-        // Access the SearchView text elements
         TextView searchText = search.findViewById(androidx.appcompat.R.id.search_src_text);
         if (searchText != null) {
             searchText.setHintTextColor(texthintColor);
             searchText.setTextColor(textColor);
         }
+
         ArrayList<Modelclass> searchList = new ArrayList<>();
 
         list.setLayoutManager(new LinearLayoutManager(this));
@@ -80,12 +75,12 @@ public class NotesShow extends AppCompatActivity {
                         searchList.add(arrayList.get(i));
                     }
                 }
-                list.setAdapter(new NoteAdapter(searchList, NotesShow.this, userid));
+                list.setAdapter(new NoteAdapter(searchList, NotesShow.this, userid, image));
                 return true;
             }
         });
 
-        NoteAdapter noteAdapter = new NoteAdapter(arrayList, this, userid);
+        NoteAdapter noteAdapter = new NoteAdapter(arrayList, this, userid,image);
         list.setAdapter(noteAdapter);
 
         add.setOnClickListener(new View.OnClickListener() {
