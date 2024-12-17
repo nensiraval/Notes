@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -20,10 +18,11 @@ import java.util.ArrayList;
 public class NotesShow extends AppCompatActivity {
 
     Button add;
-    RecyclerView list; SearchView search ;
+    RecyclerView list;
+    SearchView search;
     ArrayList<Modelclass> arrayList = new ArrayList<>();
 
-    int image[] = {R.drawable.first,R.drawable.f1,R.drawable.f2,R.drawable.f3,R.drawable.f4,R.drawable.f5};
+    int image[] = {R.drawable.first, R.drawable.f1, R.drawable.f2, R.drawable.f3, R.drawable.f4, R.drawable.f5};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +32,6 @@ public class NotesShow extends AppCompatActivity {
         list = findViewById(R.id.list);
         search = findViewById(R.id.search);
 
-        int texthintColor = Color.BLACK;
-        int textColor = Color.BLACK;
-
-        TextView searchText = search.findViewById(androidx.appcompat.R.id.search_src_text);
-        if (searchText != null) {
-            searchText.setHintTextColor(texthintColor);
-            searchText.setTextColor(textColor);
-        }
 
         ArrayList<Modelclass> searchList = new ArrayList<>();
 
@@ -80,7 +71,7 @@ public class NotesShow extends AppCompatActivity {
             }
         });
 
-        NoteAdapter noteAdapter = new NoteAdapter(arrayList, this, userid,image);
+        NoteAdapter noteAdapter = new NoteAdapter(arrayList, this, userid, image);
         list.setAdapter(noteAdapter);
 
         add.setOnClickListener(new View.OnClickListener() {

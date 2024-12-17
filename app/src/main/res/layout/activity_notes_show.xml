@@ -4,58 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="#313030"
     android:layout_height="match_parent"
+    android:background="#313030"
     tools:context=".NotesShow">
 
     <ImageView
         android:id="@+id/clip1"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/clip"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:src="@drawable/clip" />
 
     <TextView
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
         android:id="@+id/all"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="15dp"
-        android:text="All Notes"
-        android:gravity="center"
+        android:layout_marginEnd="60dp"
         android:fontFamily="@font/regulr"
+        android:gravity="center"
+        android:text="All Notes"
         android:textColor="@color/white"
-        android:textSize="30dp"/>
+        android:textSize="30dp" />
 
     <ImageView
         android:id="@+id/clip2"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/clip"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="15dp"/>
+        android:src="@drawable/clip" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="10dp"
         android:layout_below="@id/all"
-        app:cardElevation="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:background="#313030"
         app:cardCornerRadius="7dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="15dp"
-        android:background="#313030">
+        app:cardElevation="5dp">
+
         <androidx.appcompat.widget.SearchView
-            android:layout_width="match_parent"
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Search note here...."
-            android:background="#F8F2F2"
-            android:id="@+id/search"/>
+            app:queryHint="Search note here...." />
+
 
     </androidx.cardview.widget.CardView>
 
@@ -63,17 +64,17 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/card" />
+        android:layout_below="@id/card"
+        android:layout_marginTop="5dp" />
 
     <Button
         android:id="@+id/add"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/edit"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="20dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/edit" />
 
 </RelativeLayout>
